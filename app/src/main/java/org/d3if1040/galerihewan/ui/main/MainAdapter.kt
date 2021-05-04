@@ -1,14 +1,15 @@
-package org.d3if1040.galerihewan
+package org.d3if1040.galerihewan.ui.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import org.d3if1040.galerihewan.model.Hewan
 import org.d3if1040.galerihewan.databinding.ListItemBinding
 
 
 class MainAdapter(private val data: List<Hewan>):
         RecyclerView.Adapter<MainAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ListItemBinding.inflate(inflater, parent, false)
         return ViewHolder(binding)
@@ -18,7 +19,7 @@ class MainAdapter(private val data: List<Hewan>):
         return data.size
     }
 
-    override fun onBindViewHolder(holder: MainAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(data[position])
     }
 
